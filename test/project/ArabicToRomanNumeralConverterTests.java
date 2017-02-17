@@ -140,4 +140,14 @@ public class ArabicToRomanNumeralConverterTests {
 		String expectedOutcome = "M\u0305C\u0305X\u0305V\u0305MMMCMXXXIX";
 		assertEquals(expectedOutcome, arabicToRomanNumeralConverter.convert(arabicNumber));
 	}
+
+	@Test
+	public void test_appendRomanNumeral_takes_digit_5_positional_weight_1_returns_X(){
+		StringBuilder stringBuilder = new StringBuilder();
+		int digit = 5;
+		int positionalWeight = 1;
+		StringBuilder expectedOutcome = new StringBuilder("V");
+		assertEquals(expectedOutcome.toString(), arabicToRomanNumeralConverter
+				.appendRomanNumeral(digit, positionalWeight, stringBuilder).toString());
+	}
 }
